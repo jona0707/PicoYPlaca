@@ -1,5 +1,5 @@
-// Car have a "Placa" = plate, to evaluate it last number and also to see if the car could drive on an especific moment.
-class Car {
+// Vehicle have a "Placa" = plate, to evaluate it last number and also to see if the Vehicle could drive on an especific moment.
+class Vehicle{
     constructor(plate) {
         this.plate = plate;
     }
@@ -14,4 +14,4 @@ class Car {
     }
 }
 
-module.exports = Car;
+module.exports = Vehicle;
