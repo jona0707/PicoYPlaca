@@ -30,5 +30,5 @@ class Restriction {
 
 const isBetween = (x, min, max) => (x >= min && x <= max);
 
+module.exports = Restriction;
 
-//const resHours = [{morning : [7, 9.5], noon: [16, 19.5]}]
