@@ -1,7 +1,7 @@
 // ReadLine to manage de inputs
 const readline = require('readline');
 // Validate (from utils)
-const { validateDate, validateTime } = require('./utils/utils');
+const { validateDate, validateTime, validatePlate } = require('./utils/utils');
 
 // Readline's interface
 const rl = readline.createInterface({
@@ -27,9 +27,9 @@ const getOp= async () => {
 
 // Ask plate
 const getPlate = async () => {
-    plate = await askQuery('Ingrese la placa de su vehículo (mínimo 5 caracteres): ');
-    while (plate.trim().length < 5) {
-        console.log('Placa inválida, debe tener mínimo 5 caracteres.');
+    plate = await askQuery('Ingrese la placa de su vehículo (mínimo 7 caracteres y terminar en número): ');
+    while (!validatePlate(plate)) {
+        console.log('Placa inválida, debe tener mínimo 7 caracteres y terminar en número.');
         plate = await askQuery('Ingrese una placa adecuada: ');
     }
     return plate;

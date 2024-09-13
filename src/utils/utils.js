@@ -11,6 +11,16 @@ const nowDay = now.getDate();
 const nowHour = now.getHours();
 const nowMinute = now.getMinutes();
 
+const validatePlate = (plate) => {
+    // First, we check the length
+    const inPlate = plate.trim();
+    if(inPlate.length < 7) return false;
+    // Check if the plate is valid (ends with number) with denial isNaN
+    if(isNaN(inPlate.slice(-1))) return false;
+    return true;
+}
+
+
 // Validate date format, we need to predict so date have to be future, and it needs to have the correct format (YYYY-MM-DD)
 const validateDate = (date) => {
     // Regular expression to verify the format (^-$), if it is not, I send a false:
@@ -52,4 +62,4 @@ const validateTime = (time, date) => {
 
 
 
-module.exports = {isBetween, validateDate, validateTime};
+module.exports = {isBetween, validatePlate, validateDate, validateTime};

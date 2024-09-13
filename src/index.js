@@ -27,7 +27,7 @@ const main = async () => {
             // Using the car method to see if its restricted
             const carAllowed = car.allowedToDrive(date, time, rulesUIO);
             console.log(`Su vehículo con la placa ${car.plate} ${(carAllowed) ? 'no tiene' : 'tiene'} restriccion en la fecha: ${date} a la hora: ${time}.`)
-
+            console.log('');
 
         } catch (error) {
             console.error('Error:', error.message);
