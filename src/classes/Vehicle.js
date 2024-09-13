@@ -9,8 +9,8 @@ class Vehicle{
         return lastDigit;
     }
 
-    allowedToDrive(date, time, rulesUIO) {
-        return rulesUIO.allow(this.getLastDigit(), date, time);
+    allowedToDrive(date, time, rules) {
+        return rules.allow(this.getLastDigit(), date, time);
     }
 }
 

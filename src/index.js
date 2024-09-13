@@ -1,6 +1,6 @@
 // Classes
-const Vehicle = require('./Vehicle')
-const Restriction = require('./Restriction')
+const Restriction = require('./classes/Restriction');
+const Vehicle = require('./classes/Vehicle');
 // Data
 const UIO = require('./data/dataRestriction');
 // Input
