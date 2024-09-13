@@ -1,7 +1,4 @@
-// Is Between to verify if a number is between the other two.
-const isBetween = (x, min, max) => {
-    return x >= min && x <= max;
-}
+const isBetween = require("./isBetween");
 
 // To compare future date:
 const now = new Date();
@@ -57,9 +54,7 @@ const validateTime = (time, date) => {
     if (inputDate > now) return true;
     if (isBetween(inputHour, nowHour, 23) && isBetween(inputMin, nowMinute - 1, 59)) return true;
     return false;
-    return true;
 }
 
 
-
-module.exports = {isBetween, validatePlate, validateDate, validateTime};
+module.exports = { validatePlate, validateDate, validateTime}

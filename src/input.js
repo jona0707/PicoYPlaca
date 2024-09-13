@@ -1,7 +1,7 @@
 // ReadLine to manage de inputs
 const readline = require('readline');
 // Validate (from utils)
-const { validateDate, validateTime, validatePlate } = require('./utils/utils');
+const { validateDate, validateTime, validatePlate } = require('./utils/validate');
 
 // Readline's interface
 const rl = readline.createInterface({

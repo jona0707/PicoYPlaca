@@ -1,4 +1,4 @@
-const {isBetween} = require('./utils/utils');
+const isBetween = require('./utils/isBetween');
 
 // Restrictions have methods to evaluate if the car could drive or not, depending on a datetime and car's "placa".
 class Restriction {
