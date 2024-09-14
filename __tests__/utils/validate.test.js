@@ -44,7 +44,7 @@ describe('Tests in validatePlate from utils.js', () => {
   
     test('should return a false for a past day', () => {
       const pastDate = new Date();
-      pastDate.setUTCHours(0,0,0,0);
+      // More than 1 day to avoid the toISOString transformation in UTC.
       pastDate.setDate(pastDate.getDate()-5);
       const formattedDate = pastDate.toISOString().split('T')[0];
       expect(validateDate(formattedDate)).toBeFalsy();

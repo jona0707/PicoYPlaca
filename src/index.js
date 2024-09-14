@@ -34,6 +34,7 @@ const main = async () => {
         }
         finally {
             const op = await getOp();
+            console.log(' ');
             if (op === 'e') {
                 closeReadline();
                 console.log('Gracias, esperamos le haya sido de utilidad!');

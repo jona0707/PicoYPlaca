@@ -59,4 +59,4 @@ const closeReadline = () => {
     rl.close();
 };
 
-module.exports = {getOp, getPlate, getDate, getTime, closeReadline};
+module.exports = { getOp, getPlate, getDate, getTime, closeReadline };
