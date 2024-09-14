@@ -1,7 +1,7 @@
 const { getOp, getPlate, getDate, getTime, closeReadline } = require('../src/input');
 
 // New global readline based in my arbitrary responses.
-jest.mock("readline", () => {
+jest.mock('readline', () => {
     // Define the closeMock to get it.
     const closeMock = jest.fn();
     return {
@@ -13,25 +13,19 @@ jest.mock("readline", () => {
                 const response = {
                     'Ingrese la placa de su vehículo (mínimo 7 caracteres y terminar en número): ': 'ABC-1234',
                     'Ingrese la fecha (AAAA-MM-DD, ej: 2024-09-13): ': '2024-09-20',
-                    'Ingrese la hora (HH:MM, ej: 05:25): ': '12:30',
+                    'Ingrese la hora en formato 24 horas (HH:MM, ej: 17:25): ': '12:00',
                     'Presione cualquier tecla para volver a verificar, presione la letra e para salir: ': 'e'
                 };
                 // To return correctly the info to the promise, when I call the question method, it return response depending on the query.
                 callback(response[query] || '');
             }),
             // Simulate a close function.
-            close: closeMock, 
+            close: closeMock,
         })
     };
 });
 
 describe('Input functions in input.js', () => {
-    // Check if it return an 'e'
-    test('should return "e" when user chooses too exit', async () => {
-        const op = await getOp();
-        expect(op).toBe('e');
-    });
-
     // Check if the input plate was valid
     test('should return the plate validated', async () => {
         const plate = await getPlate();
@@ -47,9 +41,13 @@ describe('Input functions in input.js', () => {
     // Check if the time was valid
     test('should return the time validated', async () => {
         const time = await getTime();
-        expect(time).toBe('12:30');
+        expect(time).toBe('12:00');
     });
-
+    // Check if it return an 'e'
+    test('should return "e" when user chooses too exit', async () => {
+        const op = await getOp();
+        expect(op).toBe('e');
+    });
     test('should execute the close function when I called closeReadline', () => {
         // Call the function to close rl (readline.createInterface)
         closeReadline();

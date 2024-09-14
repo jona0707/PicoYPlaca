@@ -1,7 +1,7 @@
 const { validatePlate, validateDate, validateTime } = require('../../src/utils/validate');
 
 // Validate plate
-describe('Tests in validatePlate from utils.js', () => {
+describe('Tests in validatePlate from validate.js', () => {
     test('should return true for valid plate', () => {
       const testPlate = "ABCD123";
       // It's a valid plate, so its going to be true.
@@ -25,7 +25,7 @@ describe('Tests in validatePlate from utils.js', () => {
   });
   
   // Validate Date
-  describe('Tests in validateDate from utils.js', () => {
+  describe('Tests in validateDate from validate.js', () => {
     test('should return a false for a bad format date', () => {
       const testDate = '2023-15-09'; //YYYY-DD-MM
       expect(validateDate(testDate)).toBeFalsy();
@@ -52,7 +52,7 @@ describe('Tests in validatePlate from utils.js', () => {
   });
   
   // Validate Time
-  describe('Test in validateTime from utils.js', () => {
+  describe('Test in validateTime from validate.js', () => {
     test('should return a true for a valid hour in a future day.', () => {
       const futureDateTime = new Date();
       // To evaluate in the future

@@ -1,10 +1,10 @@
 // Classes
-const Restriction = require('./classes/Restriction');
-const Vehicle = require('./classes/Vehicle');
+const Restriction = require('./src/classes/Restriction');
+const Vehicle = require('./src/classes/Vehicle');
 // Data
-const UIO = require('./data/dataRestriction');
+const UIO = require('./src/data/dataRestriction');
 // Input
-const { getOp, getPlate, getDate, getTime, closeReadline } = require('./input');
+const { getOp, getPlate, getDate, getTime, closeReadline } = require('./src/input');
 
 
 // main function

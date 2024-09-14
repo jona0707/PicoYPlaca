@@ -47,9 +47,9 @@ const getDate = async () => {
 
 // Ask time 
 const getTime = async () => {
-    time = await askQuery('Ingrese la hora (HH:MM, ej: 05:25): ')
+    time = await askQuery('Ingrese la hora en formato 24 horas (HH:MM, ej: 17:25): ')
     while (!validateTime(time, date)) {
-        console.log('Hora inválida, su hora debe ser futura y estar en formato HH:MM, ej: 16:25. ');
+        console.log('Hora inválida, su hora debe ser futura y estar en formato HH:MM, ej: 12:00. ');
         time = await askQuery('Por favor, ingresa una hora en formato adecuado: ');
     }
     return time;
