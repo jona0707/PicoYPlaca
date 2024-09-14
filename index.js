@@ -16,8 +16,11 @@ const main = async () => {
         try {
             // Get Information from the user
             const plate = await getPlate();
+            console.log('');
             const date = await getDate();
+            console.log('');
             const time = await getTime();
+            console.log('');
 
             // Creating "Pico&Placa" restriction rules for UIO
             const rulesUIO = new Restriction(UIO.resDay, UIO.resHours);

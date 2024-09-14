@@ -16,7 +16,9 @@ This application predicts if a vehicle is allowed to be on the road, according t
 
 ## Installation
 
-To install and run the project, you can follow the next steps:
+To install and run the project, you need to have Node.js and npm installed. If you don't have them, you can download and install them from [Node.js official website](https://nodejs.org/).
+
+Once you have Node.js and npm installed, follow these steps:
 
 1. Clone the repository:
 
