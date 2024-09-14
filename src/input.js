@@ -19,11 +19,10 @@ let date = '';
 let time = '';
 
 // Menu 
-const getOp= async () => {
+const getOp = async () => {
     let op = await askQuery('Presione cualquier tecla para volver a verificar, presione la letra e para salir: ');
     return op;
 };
-
 
 // Ask plate
 const getPlate = async () => {
@@ -59,6 +58,5 @@ const getTime = async () => {
 const closeReadline = () => {
     rl.close();
 };
-
 
 module.exports = {getOp, getPlate, getDate, getTime, closeReadline};

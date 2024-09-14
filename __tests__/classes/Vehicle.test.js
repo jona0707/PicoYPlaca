@@ -44,6 +44,6 @@ describe('Test allowedToDrive, a method from Vehicle class', () => {
         expect(isAllowed).toBeTruthy();
     })
 
-})
+});
 
 

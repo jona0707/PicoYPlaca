@@ -44,8 +44,8 @@ describe('Tests in validatePlate from utils.js', () => {
   
     test('should return a false for a past day', () => {
       const pastDate = new Date();
-      pastDate.setDate(pastDate.getDate()-1);
-      // console.log(pastDate);
+      pastDate.setUTCHours(0,0,0,0);
+      pastDate.setDate(pastDate.getDate()-5);
       const formattedDate = pastDate.toISOString().split('T')[0];
       expect(validateDate(formattedDate)).toBeFalsy();
     });
@@ -55,10 +55,11 @@ describe('Tests in validatePlate from utils.js', () => {
   describe('Test in validateTime from utils.js', () => {
     test('should return a true for a valid hour in a future day.', () => {
       const futureDateTime = new Date();
-      futureDateTime.setDate(futureDateTime.getDate()+1);
+      // To evaluate in the future
+      futureDateTime.setDate(futureDateTime.getDate()+5);
+      // A random hour
       const randomHour = Math.floor(Math.random() * 24);
       futureDateTime.setHours(randomHour);
-      // console.log(futureDateTime);
       const formattedDate = futureDateTime.toISOString().split('T')[0];
       // console.log(futureDateTime.toTimeString());
       const formattedTime = futureDateTime.toTimeString().slice(0,5);
